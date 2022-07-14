@@ -1,9 +1,6 @@
 import { Router } from "express";
-import { RegisterUserController } from "../controller/RegisterUser.controller";
-import { UserRepository } from "../repository/user.repository";
 const UserRouter = Router();
-const userRepository = new UserRepository();
-const registerUser = new RegisterUserController(userRepository);
+import registerUser from "../composer/registerUser.compose";
 UserRouter.post("/", registerUser.handle);
 
 UserRouter.get("/", async (req, res) => {
