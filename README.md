@@ -14,13 +14,11 @@
 
 `POST /user/`
 
-    ```json
-        {
-            "user": "joaozinho",
-            "email":"joaozinho@email.com",
-            "password": "123456"
-        }
-    ```
+    {
+        "user": "joaozinho",
+        "email":"joaozinho@email.com",
+        "password": "123456"
+    }
 
 ### Response
 
