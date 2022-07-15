@@ -5,7 +5,7 @@ const RecordSchema: Schema = new Schema(
   {
     id: { type: Number },
     name: { type: String },
-    email: { type: Number },
+    email: { type: String },
     password: { type: String },
     role: { type: String },
   },

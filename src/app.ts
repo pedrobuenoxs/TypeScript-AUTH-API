@@ -1,5 +1,7 @@
 import express from "express";
 import UserRouter from "./routes/users.routers";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
 
 const app = express();
 
@@ -16,6 +18,7 @@ mongoose
     console.log("Error while connecting database::", err);
   });
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
 app.use("/user", UserRouter);
 
