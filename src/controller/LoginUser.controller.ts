@@ -8,7 +8,7 @@ export class LoginController {
     const { name, password, email } = req.body;
     try {
       const user = await this.userService.handle(name, password, email);
-      res.json( user ).status(200);
+      res.json(user).status(200);
     } catch (error) {
       return res.json({ error: error.message }).status(400);
     }
