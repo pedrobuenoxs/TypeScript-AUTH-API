@@ -10,7 +10,6 @@ export class RegisterUserService {
     if (!password) throw new Error("A senha é obrigatória");
 
     const user = await this.repository.findByEmail(email);
-    console.log(user);
     if (user) throw new Error("O usuário já esta cadastrado");
     const hashedPassword = await bcrypt.hash(password, 10);
     const id = new Date().valueOf();
