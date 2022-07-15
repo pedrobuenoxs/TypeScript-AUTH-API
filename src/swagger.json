@@ -1,0 +1,46 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Challenge API",
+    "desc": "Escrever",
+    "contact": {
+      "email": "pedrobuenoxs@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/user",
+      "description": "Cadastro"
+    }
+  ],
+  "paths": {
+    "/": {
+      "summary": "Cadastro de usuário",
+      "description": "Rota para cadastrar usuário",
+      "tags": ["Users"],
+      "requestBody": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/Users"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Users": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
