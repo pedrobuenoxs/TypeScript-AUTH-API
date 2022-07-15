@@ -2,10 +2,12 @@ import { RegisterUserController } from "../controller/RegisterUser.controller";
 import { UserRepository } from "../repository/user.repository";
 import { LoginController } from "../controller/LoginUser.controller";
 import { LoginUserService } from "../services/LoginUser.service";
-
+import { RegisterUserService } from "../services/RegisterUser.service";
 const userRepository = new UserRepository();
-const registerUser = new RegisterUserController(userRepository);
 
-const userService = new LoginUserService(userRepository);
-const loginUser = new LoginController(userService);
+const loginUserService = new LoginUserService(userRepository);
+const registerUserService = new RegisterUserService(userRepository);
+
+const registerUser = new RegisterUserController(registerUserService);
+const loginUser = new LoginController(loginUserService);
 export { registerUser, loginUser };
