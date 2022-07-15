@@ -10,7 +10,7 @@ export class LoginUserService {
     if (user.length > 0) {
       const tokenUser = new Token();
       const token = await tokenUser.sing(user[0].id, user[0].email);
-      return token;
+      return { token, ...user };
     } else {
       return { error: "Login inválido" };
     }
