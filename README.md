@@ -82,10 +82,13 @@
     }
 
     {
-        "user": "joaozinho",
-        "email":"joaozinho@email.com",
-        "password": "123456"
-        "role": "ADMIN" || "USER"
+        "body": {
+            "user": "joaozinho",
+            "email":"joaozinho@email.com",
+            "password": "123456"
+            "role": "ADMIN" || "USER"
+
+        }
     }
 
 ### Response
