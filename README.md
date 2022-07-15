@@ -28,7 +28,7 @@
 
 ### Request
 
-`GET /thing/`
+`GET /user/`
 
     curl -i -H 'Accept: application/json' http://localhost:7000/thing/
 
