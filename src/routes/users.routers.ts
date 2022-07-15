@@ -1,13 +1,20 @@
 import { Router } from "express";
-const UserRouter = Router();
-import { registerUser, loginUser } from "../composer/User.compose";
+const UsersRouter = Router();
 
-UserRouter.post("/", async (req, res) => {
-  registerUser.handle(req, res);
+UsersRouter.post("/", async (req, res) => {
+  res.json("post");
 });
 
-UserRouter.get("/", async (req, res) => {
-  loginUser.handle(req, res);
+UsersRouter.get("/", async (req, res) => {
+  res.json("get");
 });
 
-export default UserRouter;
+UsersRouter.put("/", async (req, res) => {
+  res.json("put");
+});
+
+UsersRouter.delete("/", async (req, res) => {
+  res.json("delete");
+});
+
+export default UsersRouter;

@@ -1,5 +1,6 @@
 import { UserRepository } from "../repository/user.repository";
 import IUser from "../interfaces/user.interface";
+import bcrypt from "bcrypt";
 export class RegisterUserService {
   constructor(private repository: UserRepository) {}
 
@@ -8,13 +9,20 @@ export class RegisterUserService {
     if (!email) throw new Error("O email é obrigatório");
     if (!password) throw new Error("A senha é obrigatória");
 
-    const repository = new UserRepository();
-    const user = await repository.findByLoginPasswd(name, password);
-    if (user.length > 0) throw new Error("O usuário já esta cadastrado");
-
+    const user = await this.repository.findByEmail(email);
+    console.log(user);
+    if (user) throw new Error("O usuário já esta cadastrado");
+    const passwordInPlainText = "12345678";
+    const hashedPassword = await bcrypt.hash(passwordInPlainText, 10);
     const id = new Date().valueOf();
 
-    const newUser: IUser = { id, name, email, password, role: "USER" };
+    const newUser: IUser = {
+      id,
+      name,
+      email,
+      password: hashedPassword,
+      role: "USER",
+    };
     return await this.repository.saveRecord(newUser);
   }
 }

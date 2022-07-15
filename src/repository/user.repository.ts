@@ -11,7 +11,7 @@ export class UserRepository {
     const save = record.save();
     return save;
   }
-  async findByLoginPasswd(name: string, password: string) {
-    return UserModel.find({ name: name, password: password });
+  async findByEmail(email: string) {
+    return UserModel.findOne({ email });
   }
 }

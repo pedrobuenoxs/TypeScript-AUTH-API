@@ -1,6 +1,5 @@
 import express from "express";
-import UserRouter from "./routes/users.routers";
-
+import { PlaylistRouter, UserRouter, UsersRouter } from "./routes/index";
 const app = express();
 
 import mongoose from "mongoose";
@@ -18,5 +17,6 @@ mongoose
 
 app.use(express.json());
 app.use("/user", UserRouter);
-
+app.use("/users", UsersRouter);
+app.use("/playlist", PlaylistRouter);
 export default app;
