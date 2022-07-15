@@ -1,19 +1,21 @@
 import { Router } from "express";
 const UsersRouter = Router();
+import Token from "../middleware/auth";
+const token = new Token();
 
-UsersRouter.post("/", async (req, res) => {
+UsersRouter.post("/", token.auth, async (req, res) => {
   res.json("post");
 });
 
-UsersRouter.get("/", async (req, res) => {
+UsersRouter.get("/", token.auth, async (req, res) => {
   res.json("get");
 });
 
-UsersRouter.put("/", async (req, res) => {
+UsersRouter.put("/", token.auth, async (req, res) => {
   res.json("put");
 });
 
-UsersRouter.delete("/", async (req, res) => {
+UsersRouter.delete("/", token.auth, async (req, res) => {
   res.json("delete");
 });
 

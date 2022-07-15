@@ -1,19 +1,21 @@
 import { Router } from "express";
 const PlaylistRouter = Router();
+import Token from "../middleware/auth";
+const token = new Token();
 
-PlaylistRouter.post("/", async (req, res) => {
+PlaylistRouter.post("/", token.auth, async (req, res) => {
   res.json("post");
 });
 
-PlaylistRouter.get("/", async (req, res) => {
+PlaylistRouter.get("/", token.auth, async (req, res) => {
   res.json("get");
 });
 
-PlaylistRouter.put("/", async (req, res) => {
+PlaylistRouter.put("/", token.auth, async (req, res) => {
   res.json("put");
 });
 
-PlaylistRouter.delete("/", async (req, res) => {
+PlaylistRouter.delete("/", token.auth, async (req, res) => {
   res.json("delete");
 });
 
