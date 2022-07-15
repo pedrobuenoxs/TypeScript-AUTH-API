@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
 
 export default class Token {
+  async auth(token:string){
+    
+  }
   async verify(token: string) {
     jwt.verify(token, "secret");
   }

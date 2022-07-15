@@ -12,8 +12,7 @@ export class RegisterUserService {
     const user = await this.repository.findByEmail(email);
     console.log(user);
     if (user) throw new Error("O usuário já esta cadastrado");
-    const passwordInPlainText = "12345678";
-    const hashedPassword = await bcrypt.hash(passwordInPlainText, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
     const id = new Date().valueOf();
 
     const newUser: IUser = {

@@ -7,14 +7,24 @@ export class LoginUserService {
   async handle(name: string, password: string, email: string) {
     if (!name) throw new Error("O nome é obrigatório");
     if (!password) throw new Error("A senha é obrigatória");
+    if (!email) throw new Error("O email é obrigatória");
+
     const user = await this.repository.findByEmail(email);
     console.log(user);
     if (user) {
-      // const isPasswordMatching = await bcrypt.compare(password, user.password);
-      // if (!isPasswordMatching) throw new Error("A senha está errada");
+      const hashPassword = user.password
+      console.log(hashPassword)
+      const isPasswordMatching = await bcrypt.compare(password,hashPassword);
+      if (!isPasswordMatching) throw new Error("A senha está errada");
       const tokenUser = new Token();
-      const token = await tokenUser.sing(user.id, user.email);
-      return { token, ...user };
+      const token = await tokenUser.sing(user.id,'secret');
+
+      return { 
+        token: token,
+        id:user.id,
+        name:user.name,
+        email:user.email 
+        };
     } else {
       return { error: "Login inválido" };
     }

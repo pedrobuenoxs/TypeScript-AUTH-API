@@ -6,7 +6,7 @@ UserRouter.post("/", async (req, res) => {
   registerUser.handle(req, res);
 });
 
-UserRouter.get("/", async (req, res) => {
+UserRouter.post("/login", async (req, res) => {
   loginUser.handle(req, res);
 });
 
