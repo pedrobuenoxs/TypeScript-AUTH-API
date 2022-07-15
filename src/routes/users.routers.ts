@@ -1,13 +1,13 @@
 import { Router } from "express";
 const UserRouter = Router();
-import registerUser from "../composer/registerUser.compose";
+import { registerUser, loginUser } from "../composer/registerUser.compose";
 
-UserRouter.post("/", (req, res) => {
+UserRouter.post("/", async (req, res) => {
   registerUser.handle(req, res);
 });
 
 UserRouter.get("/", async (req, res) => {
-  res.send("Hello world");
+  loginUser.handle(req, res);
 });
 
 export default UserRouter;

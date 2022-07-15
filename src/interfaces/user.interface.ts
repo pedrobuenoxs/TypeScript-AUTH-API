@@ -1,7 +1,8 @@
 export default interface IUser {
-  id?: number;
+  id: number;
   name: string;
   email: string;
   password: string;
-  role?: string;
+  role: string;
+  token?: string;
 }
