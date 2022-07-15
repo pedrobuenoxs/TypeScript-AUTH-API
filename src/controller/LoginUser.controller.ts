@@ -1,23 +1,16 @@
-import { UserRepository } from "../repository/user.repository";
 import { Request, Response } from "express";
-import Token from "../middleware/auth";
+import { LoginUserService } from "../services/LoginUser.service";
 
 export class LoginController {
-  constructor(private repository: UserRepository) {}
+  constructor(private userService: LoginUserService) {}
 
   async handle(req: Request, res: Response) {
     const { name, password } = req.body;
     try {
-      if (!name) throw new Error("O nome é obrigatório");
-      if (!password) throw new Error("A senha é obrigatória");
+      const token = await this.userService.handle(name, password);
+      res.json({ token: token }).status(200);
     } catch (error) {
-      return res.json({ error: error });
+      return res.json({ error: error.message }).status(400);
     }
-
-    const user = await this.repository.findByLoginPasswd(name, password);
-    const tokenUser = new Token();
-    const token = await tokenUser.sing(user[0].id, user[0].email);
-
-    res.json({ token: token });
   }
 }
