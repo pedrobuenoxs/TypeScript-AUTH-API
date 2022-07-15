@@ -1,32 +1,26 @@
 import { UserRepository } from "../repository/user.repository";
 import { Request, Response } from "express";
 import IUser from "../interfaces/user.interface";
-import Token from "../middleware/auth";
-import UserDTO from "../DTO/User.DTO";
+import { RegisterUserService } from "../services/RegisterUser.service";
 
 export class RegisterUserController {
   constructor(private repository: UserRepository) {}
 
   async handle(req: Request, res: Response) {
     const { name, email, password } = req.body;
-
-    if (!name || !email || !password || !req || !req.body) throw Error();
+    try {
+      const verifyUser = new RegisterUserService();
+      await verifyUser.handle(name, email, password);
+    } catch (error) {
+      return res.json({ error: error.message }).status(400);
+    }
 
     const id = new Date().valueOf();
 
     const user: IUser = { id, name, email, password, role: "USER" };
 
-    const token = await new Token().sing(`${id}`, email);
-    await this.repository.saveRecord(user);
+    const newUser = await this.repository.saveRecord(user);
 
-    const newUser: UserDTO = {
-      id: id,
-      name: name,
-      email: email,
-      role: user.role,
-      token,
-    };
-
-    return res.json(newUser);
+    return res.json(newUser).status(201);
   }
 }

@@ -8,7 +8,6 @@ const RecordSchema: Schema = new Schema(
     email: { type: String },
     password: { type: String },
     role: { type: String },
-    token: { type: String },
   },
   {
     timestamps: true,
