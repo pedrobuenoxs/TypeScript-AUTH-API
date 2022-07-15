@@ -6,7 +6,6 @@ export class LoginUserService {
   async handle(name: string, password: string) {
     if (!name) throw new Error("O nome é obrigatório");
     if (!password) throw new Error("A senha é obrigatória");
-    console.log("passou");
     const user = await this.repository.findByLoginPasswd(name, password);
     if (user.length > 0) {
       const tokenUser = new Token();
