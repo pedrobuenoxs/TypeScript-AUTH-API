@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import IUser from "../interfaces/user.interface";
 
-const RecordSchema: Schema = new Schema(
+const UserRecordSchema: Schema = new Schema(
   {
     id: { type: Number },
     name: { type: String },
@@ -14,4 +14,4 @@ const RecordSchema: Schema = new Schema(
   }
 );
 
-export default mongoose.model<IUser>("recordModel", RecordSchema);
+export default mongoose.model<IUser>("recordModel", UserRecordSchema);
