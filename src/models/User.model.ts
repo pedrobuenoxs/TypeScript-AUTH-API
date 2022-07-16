@@ -14,4 +14,4 @@ const UserRecordSchema: Schema = new Schema(
   }
 );
 
-export default mongoose.model<IUser>("recordModel", UserRecordSchema);
+export default mongoose.model<IUser>("userRecordModel", UserRecordSchema);
