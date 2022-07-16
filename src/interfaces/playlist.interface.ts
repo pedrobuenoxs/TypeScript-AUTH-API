@@ -1,7 +1,6 @@
-export default interface Playlist {
+export default interface IPlaylist {
   id: number;
   name: string;
-  email: string;
   genre: string;
   musics: string[];
   user_id: number;
