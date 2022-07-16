@@ -1,10 +1,10 @@
 import IUser from "../interfaces/user.interface";
-import UserModel from "../models/User.model";
+import userRecordModel from "../models/User.model";
 import mongoose from "mongoose";
 
 export class UserRepository {
   async saveRecord(data: IUser) {
-    const record = new UserModel({
+    const record = new userRecordModel({
       _id: new mongoose.Types.ObjectId(),
       ...data,
     });
@@ -12,6 +12,6 @@ export class UserRepository {
     return save;
   }
   async findByEmail(email: string) {
-    return UserModel.findOne({ email });
+    return userRecordModel.findOne({ email });
   }
 }
