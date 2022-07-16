@@ -14,4 +14,7 @@ const PlaylistRecordSchema: Schema = new Schema(
   }
 );
 
-export default mongoose.model<IPlaylist>("recordModel", PlaylistRecordSchema);
+export default mongoose.model<IPlaylist>(
+  "playlistRecordModel",
+  PlaylistRecordSchema
+);

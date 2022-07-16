@@ -1,10 +1,10 @@
 import IPlaylist from "../interfaces/playlist.interface";
-import PlaylistModel from "../models/Playlist.model";
+import playlistRecordModel from "../models/Playlist.model";
 import mongoose from "mongoose";
 
 export class PlaylistRepository {
   async createPlaylist(data: IPlaylist) {
-    const record = new PlaylistModel({
+    const record = new playlistRecordModel({
       _id: new mongoose.Types.ObjectId(),
       ...data,
     });
