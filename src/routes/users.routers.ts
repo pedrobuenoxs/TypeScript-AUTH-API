@@ -3,6 +3,7 @@ import Token from "../middleware/auth";
 import {
   createUserController,
   getAllUserController,
+  updateUserController,
 } from "../composer/Users.compose";
 
 const UsersRouter = Router();
@@ -17,7 +18,7 @@ UsersRouter.get("/", token.auth, async (req, res) => {
 });
 
 UsersRouter.put("/", token.auth, async (req, res) => {
-  res.json("put");
+  updateUserController.handle(req, res);
 });
 
 UsersRouter.delete("/", token.auth, async (req, res) => {

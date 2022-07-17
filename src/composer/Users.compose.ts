@@ -13,4 +13,10 @@ import { GetAllUsersController } from "../controller/User/GetAllUser.controller"
 const getAllUserService = new GetAllUsersService(userRepository);
 const getAllUserController = new GetAllUsersController(getAllUserService);
 
-export { createUserController, getAllUserController };
+import { UpdateUserController } from "../controller/User/UpdateUser.controller";
+import { UpdateUserService } from "../services/UpdateUser.service";
+
+const updateUserService = new UpdateUserService(userRepository);
+const updateUserController = new UpdateUserController(updateUserService);
+
+export { createUserController, getAllUserController, updateUserController };

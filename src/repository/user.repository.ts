@@ -22,4 +22,24 @@ export class UserRepository {
   async findAll() {
     return userRecordModel.find();
   }
+  async editOneUser(
+    user_id: number,
+    name: string,
+    email: string,
+    hashPassword: string,
+    role: string
+  ) {
+    return await userRecordModel.findOneAndUpdate(
+      {
+        id: user_id,
+      },
+      {
+        name,
+        password: hashPassword,
+        email,
+        role,
+      },
+      { new: true }
+    );
+  }
 }
