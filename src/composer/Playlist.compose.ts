@@ -24,8 +24,18 @@ const deletePlaylistService = new DeletePlaylistService(playlistRepository);
 const deletePlaylistController = new DeletePlaylistController(
   deletePlaylistService
 );
+
+import { UpdatePlaylistController } from "../controller/Playlist/UpdatePlaylist.controller";
+import { UpdatePlaylistService } from "../services/UpdatePlaylist.service";
+
+const updatePlaylistService = new UpdatePlaylistService(playlistRepository);
+const updatePlaylistController = new UpdatePlaylistController(
+  updatePlaylistService
+);
+
 export {
   getAllPlaylistController,
   createPlaylistController,
   deletePlaylistController,
+  updatePlaylistController,
 };

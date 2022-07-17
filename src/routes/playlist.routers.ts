@@ -6,6 +6,7 @@ import {
   createPlaylistController,
   getAllPlaylistController,
   deletePlaylistController,
+  updatePlaylistController,
 } from "../composer/Playlist.compose";
 
 PlaylistRouter.post("/", token.auth, async (req, res) => {
@@ -17,7 +18,7 @@ PlaylistRouter.get("/", token.auth, async (req, res) => {
 });
 
 PlaylistRouter.put("/", token.auth, async (req, res) => {
-  res.json("put");
+  updatePlaylistController.handle(req, res);
 });
 
 PlaylistRouter.delete("/", token.auth, async (req, res) => {

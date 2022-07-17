@@ -21,7 +21,19 @@ export class PlaylistRepository {
     return await playlistRecordModel.deleteOne({ id: id, user_id: user_id });
   }
 
-  async editOnePlaylist() {
-    return true;
+  async editOnePlaylist(id: number, user_id: number, data: IPlaylist) {
+    const { name, genre, musics } = data;
+    return await playlistRecordModel.findOneAndUpdate(
+      {
+        id: id,
+        user_id: user_id,
+      },
+      {
+        name,
+        genre,
+        musics,
+      },
+      { new: true }
+    );
   }
 }
