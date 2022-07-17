@@ -1,5 +1,5 @@
-import { UserRepository } from "../repository/user.repository";
-import Token from "../middleware/auth";
+import { UserRepository } from "../../repository/user.repository";
+import Token from "../../middleware/auth";
 import bcrypt from "bcrypt";
 
 export class LoginUserService {

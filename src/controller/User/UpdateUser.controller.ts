@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import IUser from "../../interfaces/user.interface";
-import { UpdateUserService } from "../../services/UpdateUser.service";
+import { UpdateUserService } from "../../services/User/UpdateUser.service";
 export class UpdateUserController {
   constructor(private updateUserService: UpdateUserService) {}
 

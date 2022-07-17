@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DeleteUserService } from "../../services/DeleteUser.service";
+import { DeleteUserService } from "../../services/User/DeleteUser.service";
 export class DeleteUserController {
   constructor(private deleteUserService: DeleteUserService) {}
 

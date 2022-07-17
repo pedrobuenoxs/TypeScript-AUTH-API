@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import IPlaylist from "../../interfaces/playlist.interface";
-import { CreatePlaylistService } from "../../services/CreatePlaylist.service";
+import { CreatePlaylistService } from "../../services/Playlist/CreatePlaylist.service";
 
 export class CreatePlaylistController {
   constructor(private createPlaylistService: CreatePlaylistService) {}

@@ -1,5 +1,5 @@
-import { UserRepository } from "../repository/user.repository";
-import IUser from "../interfaces/user.interface";
+import { UserRepository } from "../../repository/user.repository";
+import IUser from "../../interfaces/user.interface";
 import bcrypt from "bcrypt";
 export class RegisterUserService {
   constructor(private repository: UserRepository) {}

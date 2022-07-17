@@ -1,5 +1,5 @@
-import { UserRepository } from "../repository/user.repository";
-import Token from "../middleware/auth";
+import { UserRepository } from "../../repository/user.repository";
+import Token from "../../middleware/auth";
 
 export class GetAllUsersService {
   constructor(private repository: UserRepository) {}

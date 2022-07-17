@@ -1,5 +1,5 @@
-import { PlaylistRepository } from "../repository/playlist.repository";
-import Token from "../middleware/auth";
+import { PlaylistRepository } from "../../repository/playlist.repository";
+import Token from "../../middleware/auth";
 
 export class GetAllPlaylistService {
   constructor(private repository: PlaylistRepository) {}

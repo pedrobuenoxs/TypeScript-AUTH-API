@@ -1,6 +1,6 @@
-import { PlaylistRepository } from "../repository/playlist.repository";
-import IPlaylist from "../interfaces/playlist.interface";
-import Token from "../middleware/auth";
+import { PlaylistRepository } from "../../repository/playlist.repository";
+import IPlaylist from "../../interfaces/playlist.interface";
+import Token from "../../middleware/auth";
 export class CreatePlaylistService {
   constructor(private repository: PlaylistRepository) {}
 

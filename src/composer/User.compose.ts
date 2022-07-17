@@ -1,8 +1,8 @@
 import { RegisterUserController } from "../controller/Public/RegisterUser.controller";
 import { UserRepository } from "../repository/user.repository";
 import { LoginController } from "../controller/Public/LoginUser.controller";
-import { LoginUserService } from "../services/LoginUser.service";
-import { RegisterUserService } from "../services/RegisterUser.service";
+import { LoginUserService } from "../services/Public/LoginUser.service";
+import { RegisterUserService } from "../services/Public/RegisterUser.service";
 const userRepository = new UserRepository();
 
 //POST '/USER/LOGIN' - To login and receive a token
