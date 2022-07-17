@@ -106,11 +106,11 @@
 ### Request
 
 `PUT /users`
-{
-"Headers": {
-"authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNjU3ODk5ODU3NTg3LCJlbWFpbCI6ImpvYW96aW5ob0BlbWFpbC5jb20iLCJpYXQiOjE2NTc5MDA0MzksImV4cCI6MTY1NzkwNDAzOX0.T6IjfddCOhNqsGORiGZt0inANxd1Jhurti6P0WMUXkA"
-}
-}
+    {
+    "Headers": {
+        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNjU3ODk5ODU3NTg3LCJlbWFpbCI6ImpvYW96aW5ob0BlbWFpbC5jb20iLCJpYXQiOjE2NTc5MDA0MzksImV4cCI6MTY1NzkwNDAzOX0.T6IjfddCOhNqsGORiGZt0inANxd1Jhurti6P0WMUXkA"
+        }
+    }
 
     {
         "body":
@@ -148,49 +148,49 @@
 ### Request
 
 `GET /users/login`
-{
-"Headers": {
-"authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNjU3ODk5ODU3NTg3LCJlbWFpbCI6ImpvYW96aW5ob0BlbWFpbC5jb20iLCJpYXQiOjE2NTc5MDA0MzksImV4cCI6MTY1NzkwNDAzOX0.T6IjfddCOhNqsGORiGZt0inANxd1Jhurti6P0WMUXkA"
-}
-}
+    {
+    "Headers": {
+        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNjU3ODk5ODU3NTg3LCJlbWFpbCI6ImpvYW96aW5ob0BlbWFpbC5jb20iLCJpYXQiOjE2NTc5MDA0MzksImV4cCI6MTY1NzkwNDAzOX0.T6IjfddCOhNqsGORiGZt0inANxd1Jhurti6P0WMUXkA"
+        }
+    }
 
-}
+
 
 ### Response
 
-[
-{
-"_id": "62d362052b640ee619fee345",
-"id": 1658020357642,
-"name": "Pedro",
-"email": "pedro1@email.com",
-"password": "$2b$10$RN1kXGxyln/bl1nDzqY7auUyQ2aZvbQVhpQV9eRp/yRjh.4sx02q2",
-"role": "USER",
-"createdAt": "2022-07-17T01:12:37.646Z",
-"updatedAt": "2022-07-17T01:12:37.646Z",
-"__v": 0
-},
-{
-"_id": "62d366e0f1080e359d449700",
-"id": 1658021600927,
-"name": "Pedro",
-"email": "pedro2@email.com",
-"password": "$2b$10$wcrYeazqGdQDxL1DpfOkUu8Klmhr5VS2LfIzs2upzNhu3pYZT510G",
-"role": "USER",
-"createdAt": "2022-07-17T01:33:20.927Z",
-"updatedAt": "2022-07-17T01:33:20.927Z",
-"__v": 0
-},
-{
-"_id": "62d3685c968c39502e52f57e",
-"id": 1658021980943,
-"name": "Pedro",
-"email": "pedro3@email.com",
-"password": "$2b$10$pW.4auB7xmvej13kKNEaaeO5s/G.XXRQm85O.P1Gm0wbyLXx9Kr26",
-"role": "USER",
-"createdAt": "2022-07-17T01:39:40.946Z",
-"updatedAt": "2022-07-17T01:39:40.946Z",
-"__v": 0
-}
-]
-Status: 200 OK
+    [
+        {
+            "_id": "62d362052b640ee619fee345",
+            "id": 1658020357642,
+            "name": "Pedro",
+            "email": "pedro1@email.com",
+            "password": "$2b$10$RN1kXGxyln/bl1nDzqY7auUyQ2aZvbQVhpQV9eRp/yRjh.4sx02q2",
+            "role": "USER",
+            "createdAt": "2022-07-17T01:12:37.646Z",
+            "updatedAt": "2022-07-17T01:12:37.646Z",
+            "__v": 0
+        },
+        {
+            "_id": "62d366e0f1080e359d449700",
+            "id": 1658021600927,
+            "name": "Pedro",
+            "email": "pedro2@email.com",
+            "password": "$2b$10$wcrYeazqGdQDxL1DpfOkUu8Klmhr5VS2LfIzs2upzNhu3pYZT510G",
+            "role": "USER",
+            "createdAt": "2022-07-17T01:33:20.927Z",
+            "updatedAt": "2022-07-17T01:33:20.927Z",
+            "__v": 0
+        },
+        {
+            "_id": "62d3685c968c39502e52f57e",
+            "id": 1658021980943,
+            "name": "Pedro",
+            "email": "pedro3@email.com",
+            "password": "$2b$10$pW.4auB7xmvej13kKNEaaeO5s/G.XXRQm85O.P1Gm0wbyLXx9Kr26",
+            "role": "USER",
+            "createdAt": "2022-07-17T01:39:40.946Z",
+            "updatedAt": "2022-07-17T01:39:40.946Z",
+            "__v": 0
+        }
+    ]
+    Status: 200 OK
