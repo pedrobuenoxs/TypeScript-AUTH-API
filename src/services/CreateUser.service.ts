@@ -35,7 +35,7 @@ export class CreateUserUserService {
         password: hashedPassword,
         role: role || "USER",
       };
-      return newUser;
+      return await this.repository.saveRecord(newUser);
     } catch (error) {
       return { error: error.message };
     }
