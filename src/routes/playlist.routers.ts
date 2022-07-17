@@ -2,14 +2,17 @@ import { Router } from "express";
 const PlaylistRouter = Router();
 import Token from "../middleware/auth";
 const token = new Token();
-import { createPlaylistController } from "../composer/Playlist.compose";
+import {
+  createPlaylistController,
+  getAllPlaylistController,
+} from "../composer/Playlist.compose";
 
-PlaylistRouter.post("/", token.auth, (req, res) => {
+PlaylistRouter.post("/", token.auth, async (req, res) => {
   createPlaylistController.handle(req, res);
 });
 
 PlaylistRouter.get("/", token.auth, async (req, res) => {
-  res.json("get");
+  createPlaylistController.handle(req, res);
 });
 
 PlaylistRouter.put("/", token.auth, async (req, res) => {
