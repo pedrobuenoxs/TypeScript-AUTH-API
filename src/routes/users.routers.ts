@@ -4,6 +4,7 @@ import {
   createUserController,
   getAllUserController,
   updateUserController,
+  deleteUserController,
 } from "../composer/Users.compose";
 
 const UsersRouter = Router();
@@ -22,7 +23,7 @@ UsersRouter.put("/", token.auth, async (req, res) => {
 });
 
 UsersRouter.delete("/", token.auth, async (req, res) => {
-  res.json("delete");
+  deleteUserController.handle(req, res);
 });
 
 export default UsersRouter;

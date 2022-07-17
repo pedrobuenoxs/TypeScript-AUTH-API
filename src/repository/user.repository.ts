@@ -22,6 +22,9 @@ export class UserRepository {
   async findAll() {
     return userRecordModel.find();
   }
+  async deleteOneUser(id: number) {
+    return await userRecordModel.deleteOne({ id: id });
+  }
   async editOneUser(
     user_id: number,
     name: string,

@@ -19,4 +19,15 @@ import { UpdateUserService } from "../services/UpdateUser.service";
 const updateUserService = new UpdateUserService(userRepository);
 const updateUserController = new UpdateUserController(updateUserService);
 
-export { createUserController, getAllUserController, updateUserController };
+import { DeleteUserService } from "../services/DeleteUser.service";
+import { DeleteUserController } from "../controller/User/DeleteUser.controller";
+
+const deleteUserService = new DeleteUserService(userRepository);
+const deleteUserController = new DeleteUserController(deleteUserService);
+
+export {
+  createUserController,
+  getAllUserController,
+  updateUserController,
+  deleteUserController,
+};
