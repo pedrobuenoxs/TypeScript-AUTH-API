@@ -1,6 +1,9 @@
 import { Router } from "express";
 import Token from "../middleware/auth";
-import { createUserController } from "../composer/Users.compose";
+import {
+  createUserController,
+  getAllUserController,
+} from "../composer/Users.compose";
 
 const UsersRouter = Router();
 const token = new Token();
@@ -10,7 +13,7 @@ UsersRouter.post("/", token.auth, async (req, res) => {
 });
 
 UsersRouter.get("/", token.auth, async (req, res) => {
-  res.json("get");
+  getAllUserController.handle(req, res);
 });
 
 UsersRouter.put("/", token.auth, async (req, res) => {

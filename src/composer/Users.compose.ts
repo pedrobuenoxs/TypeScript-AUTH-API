@@ -7,4 +7,10 @@ import { CreateUserController } from "../controller/User/CreateUser.controller";
 const createUserService = new CreateUserUserService(userRepository);
 const createUserController = new CreateUserController(createUserService);
 
-export { createUserController };
+import { GetAllUsersService } from "../services/GetAllUsers.service";
+import { GetAllUsersController } from "../controller/User/GetAllUser.controller";
+
+const getAllUserService = new GetAllUsersService(userRepository);
+const getAllUserController = new GetAllUsersController(getAllUserService);
+
+export { createUserController, getAllUserController };
