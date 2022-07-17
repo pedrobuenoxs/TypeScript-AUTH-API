@@ -13,8 +13,8 @@ export class PlaylistRepository {
   async loadOnePlaylist(name: string, user_id: number) {
     return playlistRecordModel.findOne({ name: name, user_id: user_id });
   }
-  async getAllPlaylist() {
-    return true;
+  async getAllPlaylist(user_id: number) {
+    return await playlistRecordModel.find({ user_id: user_id });
   }
 
   async deleteOnePlaylist() {
