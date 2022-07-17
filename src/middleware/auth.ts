@@ -23,4 +23,12 @@ export default class Token {
   async sing(_id: string, email: string) {
     return jwt.sign({ user_id: _id, email }, "secret", { expiresIn: "1h" });
   }
+  async verify(authHeader: string) {
+    const [, token] = authHeader.split(" ");
+    return jwt.verify(token, "secret");
+  }
+  async getTokenUserId(authHeader: string) {
+    const [, token] = authHeader.split(" ");
+    return jwt.verify(token, "secret").user_id;
+  }
 }
