@@ -15,9 +15,9 @@ export class CreateUserController {
         password,
         role
       );
-      res.json(user).status(201);
+      res.status(201).json(user);
     } catch (error) {
-      return res.json({ error: error.message }).status(400);
+      return res.status(400).json({ error: error.message });
     }
   }
 }
