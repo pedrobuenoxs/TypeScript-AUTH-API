@@ -17,8 +17,8 @@ export class PlaylistRepository {
     return await playlistRecordModel.find({ user_id: user_id });
   }
 
-  async deleteOnePlaylist() {
-    return true;
+  async deleteOnePlaylist(id: number, user_id: number) {
+    return await playlistRecordModel.deleteOne({ id: id, user_id: user_id });
   }
 
   async editOnePlaylist() {

@@ -5,6 +5,7 @@ const token = new Token();
 import {
   createPlaylistController,
   getAllPlaylistController,
+  deletePlaylistController,
 } from "../composer/Playlist.compose";
 
 PlaylistRouter.post("/", token.auth, async (req, res) => {
@@ -20,7 +21,7 @@ PlaylistRouter.put("/", token.auth, async (req, res) => {
 });
 
 PlaylistRouter.delete("/", token.auth, async (req, res) => {
-  res.json("delete");
+  deletePlaylistController.handle(req, res);
 });
 
 export default PlaylistRouter;

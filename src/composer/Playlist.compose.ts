@@ -16,4 +16,16 @@ const getAllPlaylistService = new GetAllPlaylistService(playlistRepository);
 const getAllPlaylistController = new GetAllPlaylistController(
   getAllPlaylistService
 );
-export { getAllPlaylistController, createPlaylistController };
+
+import { DeletePlaylistController } from "../controller/Playlist/DeletePlaylist.controller";
+import { DeletePlaylistService } from "../services/DeletePlaylist.service";
+
+const deletePlaylistService = new DeletePlaylistService(playlistRepository);
+const deletePlaylistController = new DeletePlaylistController(
+  deletePlaylistService
+);
+export {
+  getAllPlaylistController,
+  createPlaylistController,
+  deletePlaylistController,
+};
