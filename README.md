@@ -8,6 +8,8 @@
 
     `npm run dev`
 
+# Login e Cadastro e Admin User
+
 ## 1 - Cadastro
 
 ### Request
@@ -35,7 +37,34 @@
     }
     Status: 201 CREATED
 
-## 2 - Login
+## 2 - Cadastro ADMIN USER
+
+### Request
+
+`POST /user/`
+
+    {
+        "user": "joaozinho",
+        "email":"joaozinho@email.com",
+        "password": "123456"
+    }
+
+### Response
+
+    {
+    "id": 1657899857587,
+    "name": "joaozinho",
+    "email": "joaozinho@email.com",
+    "password": "$2b$10$Id13HhMBtygoZdH/.tY.NuJ1lLS5/rwNJBfLKuPjozDYXjLEtwsue",
+    "role": "ADMIN",
+    "_id": "62d18b51a9220e3ab823d7ed",
+    "createdAt": "2022-07-15T15:44:17.595Z",
+    "updatedAt": "2022-07-15T15:44:17.595Z",
+    "__v": 0
+    }
+    Status: 201 CREATED
+
+## 3 - Login
 
 ### Request
 
@@ -58,7 +87,7 @@
 
 # CRUD de Usuários
 
-## 3 - Criando um usuário. É necessário estar logado em um usuário admin.
+## 1 - Criando um usuário. É necessário estar logado em um usuário admin.
 
     {
         "role": admin
@@ -99,7 +128,7 @@
     }
     Status: 201 OK
 
-## 4 - Editando um usuário. É necessário estar logado em um usuário admin
+## 2 - Editando um usuário. É necessário estar logado em um usuário admin
 
     {
         "role": admin
@@ -142,7 +171,7 @@
     }
     Status: 201 OK
 
-## 5 - Listando todos usuários. É necessário estar logado em um usuário admin
+## 3 - Listando todos usuários. É necessário estar logado em um usuário admin
 
     {
         "role": admin
@@ -199,7 +228,7 @@
     ]
     Status: 200 OK
 
-## 6 - Deletar um usuário. É necessário estar logado em um usuário admin
+## 4 - Deletar um usuário. É necessário estar logado em um usuário admin
 
     {
         "role": admin
@@ -231,7 +260,7 @@
 
 # CRUD de Playlist
 
-## 7 - Criando uma Playlist. É necessário estar logado.
+## 1 - Criando uma Playlist. É necessário estar logado.
 
 
 ### Request
@@ -276,7 +305,7 @@
     }
     Status: 201 OK
 
-## 4 - Editando uma Playlist. É necessário estar logado.
+## 2 - Editando uma Playlist. É necessário estar logado.
 
 
 ### Request
@@ -336,7 +365,7 @@
     }
     Status: 201 OK
 
-## 5 - Listando suas Playlists. É necessário estar logado.
+## 3 - Listando suas Playlists. É necessário estar logado.
 
 ### Request
 
@@ -392,7 +421,7 @@
     ]
     Status: 200 OK
 
-## 6 - Deletando uma Playlist. É necessário estar logado.
+## 4 - Deletando uma Playlist. É necessário estar logado.
 
 ### Request
 
