@@ -12,7 +12,7 @@ PlaylistRouter.post("/", token.auth, async (req, res) => {
 });
 
 PlaylistRouter.get("/", token.auth, async (req, res) => {
-  createPlaylistController.handle(req, res);
+  getAllPlaylistController.handle(req, res);
 });
 
 PlaylistRouter.put("/", token.auth, async (req, res) => {
