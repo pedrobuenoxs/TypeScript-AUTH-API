@@ -10,8 +10,8 @@ export class PlaylistRepository {
     });
     return record.save();
   }
-  async loadOnePlaylist() {
-    return true;
+  async loadOnePlaylist(name: string, user_id: number) {
+    return playlistRecordModel.findOne({ name: name, user_id: user_id });
   }
   async getAllPlaylist() {
     return true;

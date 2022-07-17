@@ -3,15 +3,16 @@ import IPlaylist from "../../interfaces/playlist.interface";
 import { CreatePlaylistService } from "../../services/CreatePlaylist.service";
 
 export class CreatePlaylistController {
-  constructor(private userService: CreatePlaylistService) {}
+  constructor(private createPlaylistService: CreatePlaylistService) {}
 
   async handle(req: Request, res: Response) {
+    const authToken = req.headers.authorization || "";
     try {
       const data: IPlaylist = req.body;
-      const playlist = this.userService.handle(data);
-      res.json(playlist).status(200);
+      const playlist = await this.createPlaylistService.handle(data, authToken);
+      res.status(201).json(playlist);
     } catch (error) {
-      res.json(error).status(400);
+      res.status(500).send({ error: error.message });
     }
   }
 }

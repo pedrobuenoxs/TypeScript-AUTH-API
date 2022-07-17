@@ -4,7 +4,9 @@ import Token from "../middleware/auth";
 const token = new Token();
 import { createPlaylistController } from "../composer/Playlist.compose";
 
-PlaylistRouter.post("/", token.auth, createPlaylistController.handle);
+PlaylistRouter.post("/", token.auth, (req, res) => {
+  createPlaylistController.handle(req, res);
+});
 
 PlaylistRouter.get("/", token.auth, async (req, res) => {
   res.json("get");
