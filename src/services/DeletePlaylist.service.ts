@@ -14,8 +14,7 @@ export class DeletePlaylistService {
         id,
         userID
       );
-      console.log(deletePlaylist);
-      console.log(id, userID);
+
       if (deletePlaylist.deletedCount === 0)
         throw new Error("Playlist já foi deletada");
       return { message: true };
