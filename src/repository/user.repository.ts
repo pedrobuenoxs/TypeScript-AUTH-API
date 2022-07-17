@@ -14,4 +14,8 @@ export class UserRepository {
   async findByEmail(email: string) {
     return userRecordModel.findOne({ email });
   }
+
+  async findByID(user_id: string) {
+    return userRecordModel.find({ user_id: user_id });
+  }
 }

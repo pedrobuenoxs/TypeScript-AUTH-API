@@ -1,10 +1,12 @@
 import { Router } from "express";
-const UsersRouter = Router();
 import Token from "../middleware/auth";
+import { createUserController } from "../composer/Users.compose";
+
+const UsersRouter = Router();
 const token = new Token();
 
 UsersRouter.post("/", token.auth, async (req, res) => {
-  res.json("post");
+  createUserController.handle(req, res);
 });
 
 UsersRouter.get("/", token.auth, async (req, res) => {
