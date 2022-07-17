@@ -140,7 +140,7 @@
     }
     Status: 201 OK
 
-## 5 - Listando usuários. É necessário estar logado em um usuário admin
+## 5 - Listando todos usuários. É necessário estar logado em um usuário admin
 
     {
         "role": admin
@@ -148,7 +148,7 @@
 
 ### Request
 
-`GET /users/login`
+`GET /users`
 
     {
         "Headers": {
@@ -196,3 +196,34 @@
         }
     ]
     Status: 200 OK
+
+## 6 - Deletar um usuário. É necessário estar logado em um usuário admin
+
+    {
+        "role": admin
+    }
+
+### Request
+
+`DELETE /users`
+
+    {
+        "Headers": {
+            "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNjU3ODk5ODU3NTg3LCJlbWFpbCI6ImpvYW96aW5ob0BlbWFpbC5jb20iLCJpYXQiOjE2NTc5MDA0MzksImV4cCI6MTY1NzkwNDAzOX0.T6IjfddCOhNqsGORiGZt0inANxd1Jhurti6P0WMUXkA"
+        }
+    }
+
+    {
+        "body":
+        {
+            "id": 1658087880749"
+        }
+    }
+
+### Response
+
+    {
+	    "message": true
+    }
+    Status: 200 OK
+
