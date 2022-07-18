@@ -18,7 +18,6 @@ export class UpdateUserService {
       const currentUserID = await auth.getTokenUserId(authHeader);
       const currentUser = await this.repository.findByID(currentUserID);
 
-      console.log(currentUser);
       if (currentUser[0].role != "ADMIN")
         throw new Error(
           "Para editar um usuário, faça login como admnistrador."
