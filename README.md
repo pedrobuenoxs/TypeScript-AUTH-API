@@ -265,7 +265,7 @@
 
 ### Request
 
-`POST /users`
+`POST /playlist`
 
     {
         "Headers": {
@@ -310,7 +310,7 @@
 
 ### Request
 
-`PUT /users`
+`PUT /playlist`
 
     {
         "Headers": {
@@ -369,7 +369,7 @@
 
 ### Request
 
-`GET /users`
+`GET /playlist`
 
     {
         "Headers": {
@@ -425,7 +425,7 @@
 
 ### Request
 
-`DELETE /users`
+`DELETE /playlist`
 
     {
         "Headers": {
